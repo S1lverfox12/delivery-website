@@ -2,13 +2,14 @@
 
 import { prisma } from '@/prisma/prisma-client';
 import { PayOrderTemplate } from '@/shared/components';
-import { VerificationUserTemplate } from '@/shared/components/shared/email-temapltes/verification-user';
+import {VerificationUserTemplate}  from '@/shared/components/shared/email-temapltes/verification-user';
 import { CheckoutFormValues } from '@/shared/constants';
 import { createPayment, sendEmail } from '@/shared/lib';
 import { getUserSession } from '@/shared/lib/get-user-session';
 import { OrderStatus, Prisma } from '@prisma/client';
 import { hashSync } from 'bcrypt';
 import { cookies } from 'next/headers';
+
 
 export async function createOrder(data: CheckoutFormValues) {
   try {
@@ -102,13 +103,13 @@ export async function createOrder(data: CheckoutFormValues) {
     const paymentUrl = paymentData.confirmation.confirmation_url;
 
     await sendEmail(
-      data.email,
-      'Next Pizza / Оплатите заказ #' + order.id,
-      PayOrderTemplate({
-        orderId: order.id,
-        totalAmount: order.totalAmount,
-        paymentUrl,
-      }),
+        data.email,
+        'Next Pizza / Оплатите заказ #' + order.id,
+        PayOrderTemplate({
+          orderId: order.id,
+          totalAmount: order.totalAmount,
+          paymentUrl,
+        }),
     );
 
     return paymentUrl;
@@ -179,13 +180,13 @@ export async function registerUser(body: Prisma.UserCreateInput) {
         userId: createdUser.id,
       },
     });
-
+    console.log(createdUser.email);
     await sendEmail(
-      createdUser.email,
-      'Next Pizza / 📝 Подтверждение регистрации',
-      VerificationUserTemplate({
-        code,
-      }),
+        createdUser.email,
+        'Next Pizza / 📝 Подтверждение регистрации',
+        VerificationUserTemplate({
+          code,
+        }),
     );
   } catch (err) {
     console.log('Error [CREATE_USER]', err);

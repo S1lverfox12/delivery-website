@@ -23,7 +23,7 @@ export async function GET(req: any, res: any) {
         password: false,
       },
     });
-
+    console.log(NextResponse.json(data))
     return NextResponse.json(data);
   } catch (error) {
     console.log(error);
