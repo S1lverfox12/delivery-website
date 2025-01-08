@@ -54,6 +54,16 @@ export const ChoosePizzaForm: React.FC<Props> = ({
     selectedIngredients,
   );
 
+
+  // Фильтруем ингредиенты в зависимости от типа пиццы
+  const filteredIngredients = ingredients.filter((ingredient) => {
+    if (type === 2) { // Вегетарианская пицца
+      return ingredient.isVegetarian; // Предположим, что у ингредиента есть свойство isVegetarian
+    }
+    return true; // Для обычной пиццы показываем все ингредиенты
+  });
+
+
   const handleClickAdd = () => {
     if (currentItemId) {
       onSubmit(currentItemId, Array.from(selectedIngredients));
@@ -85,7 +95,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
 
         <div className="bg-gray-50 p-5 rounded-md h-[420px] overflow-auto scrollbar mt-5">
           <div className="grid grid-cols-3 gap-3">
-            {ingredients.map((ingredient) => (
+            {filteredIngredients.map((ingredient) => (
               <IngredientItem
                 key={ingredient.id}
                 name={ingredient.name}

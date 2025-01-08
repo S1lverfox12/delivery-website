@@ -37,8 +37,8 @@ export const Filters: React.FC<Props> = ({ className }) => {
         onClickCheckbox={filters.setPizzaTypes}
         selected={filters.pizzaTypes}
         items={[
-          { text: 'Тонкое', value: '1' },
-          { text: 'Традиционное', value: '2' },
+          { text: 'Обычный', value: '1' },
+          { text: 'Вегетарианский', value: '2' },
         ]}
       />
 
@@ -49,9 +49,9 @@ export const Filters: React.FC<Props> = ({ className }) => {
         onClickCheckbox={filters.setSizes}
         selected={filters.sizes}
         items={[
-          { text: '20 см', value: '20' },
-          { text: '30 см', value: '30' },
-          { text: '40 см', value: '40' },
+          { text: 'Овощная', value: '1' },
+          { text: 'Куриная', value: '2' },
+          { text: 'Говяжья', value: '3' },
         ]}
       />
 

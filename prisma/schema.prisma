@@ -69,9 +69,10 @@ model ProductItem {
 model Ingredient {
     id Int @id @default(autoincrement())
 
-    name     String
-    price    Int
-    imageUrl String
+    name            String
+    price           Int
+    imageUrl        String
+    isVegetarian    Boolean @default(false)
 
     products  Product[]
     cartItems CartItem[]

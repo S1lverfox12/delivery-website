@@ -51,10 +51,10 @@ export const Header: React.FC<Props> = ({ hasSearch = true, hasCart = true, clas
         {/* Левая часть */}
         <Link href="/">
           <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="Logo" width={35} height={35} />
+            <Image src="/logo.png" alt="Logo" width={82} height={123} />
             <div>
-              <h1 className="text-2xl uppercase font-black">Next Pizza</h1>
-              <p className="text-sm text-gray-400 leading-3">вкусней уже некуда</p>
+              <h1 className="text-2xl uppercase font-black">BURGO!</h1>
+              {/*<p className="text-sm text-gray-400 leading-3">вкусней уже некуда</p>*/}
             </div>
           </div>
         </Link>

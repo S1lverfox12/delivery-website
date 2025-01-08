@@ -14,7 +14,7 @@ const generateProductItem = ({
 }: {
   productId: number;
   pizzaType?: 1 | 2;
-  size?: 20 | 30 | 40;
+  size?: 1 | 2 | 3;
 }) => {
   return {
     productId,
@@ -95,22 +95,22 @@ async function up() {
   await prisma.productItem.createMany({
     data: [
       // Пицца "Пепперони фреш"
-      generateProductItem({ productId: pizza1.id, pizzaType: 1, size: 20 }),
-      generateProductItem({ productId: pizza1.id, pizzaType: 2, size: 30 }),
-      generateProductItem({ productId: pizza1.id, pizzaType: 2, size: 40 }),
+      generateProductItem({ productId: pizza1.id, pizzaType: 2, size: 1 }),
+      generateProductItem({ productId: pizza1.id, pizzaType: 1, size: 2 }),
+      generateProductItem({ productId: pizza1.id, pizzaType: 1, size: 3 }),
 
       // Пицца "Сырная"
-      generateProductItem({ productId: pizza2.id, pizzaType: 1, size: 20 }),
-      generateProductItem({ productId: pizza2.id, pizzaType: 1, size: 30 }),
-      generateProductItem({ productId: pizza2.id, pizzaType: 1, size: 40 }),
-      generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 20 }),
-      generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 30 }),
-      generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 40 }),
+      generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 1 }),
+      generateProductItem({ productId: pizza2.id, pizzaType: 1, size: 2 }),
+      generateProductItem({ productId: pizza2.id, pizzaType: 1, size: 3 }),
+      // generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 1 }),
+      // generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 2 }),
+      // generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 3 }),
 
       // Пицца "Чоризо фреш"
-      generateProductItem({ productId: pizza3.id, pizzaType: 1, size: 20 }),
-      generateProductItem({ productId: pizza3.id, pizzaType: 2, size: 30 }),
-      generateProductItem({ productId: pizza3.id, pizzaType: 2, size: 40 }),
+      generateProductItem({ productId: pizza3.id, pizzaType: 2, size: 1 }),
+      generateProductItem({ productId: pizza3.id, pizzaType: 1, size: 2 }),
+      generateProductItem({ productId: pizza3.id, pizzaType: 1, size: 3 }),
 
       // Остальные продукты
       generateProductItem({ productId: 1 }),
