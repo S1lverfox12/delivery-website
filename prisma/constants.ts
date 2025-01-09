@@ -103,13 +103,13 @@ export const _ingredients = [
   //     'https://cdn.dodostatic.net/static/Img/Ingredients/b2f3a5d5afe44516a93cfc0d2ee60088.png',
   // },
   //   new ingredients
-  {
-    name: 'Сыр',
-    price: 50,
-    isVegetarian: true,
-    imageUrl:
-    '/assets/images/ingredients/сыр.png',
-  },
+  // {
+  //   name: 'Сыр',
+  //   price: 50,
+  //   isVegetarian: true,
+  //   imageUrl:
+  //   '/assets/images/ingredients/сыр.png',
+  // },
   {
     name: 'Булка',
     price: 10,
@@ -125,18 +125,32 @@ export const _ingredients = [
         '/assets/images/ingredients/salat-iceberg.webp',
   },
   {
-    name: 'острый перец халапеньо',
+    name: 'Острый перец халапеньо',
     price: 200,
     isVegetarian: true,
     imageUrl:
         '/assets/images/ingredients/острый перец халапеньо.png',
   },
   {
-    name: 'Котлета',
+    name: 'Котлета из говядины',
     price: 100,
     isVegetarian: false,
     imageUrl:
-        '/assets/images/ingredients/котлета.png',
+        '/assets/images/ingredients/Котлета из говядины.png',
+  },
+  {
+    name: 'Овощная котлета',
+    price: 100,
+    isVegetarian: true,
+    imageUrl:
+        '/assets/images/ingredients/овощная котлета.png',
+  },
+  {
+    name: 'Куриная котлета',
+    price: 100,
+    isVegetarian: false,
+    imageUrl:
+        '/assets/images/ingredients/Куриная котлета.png',
   },
   {
     name: 'Помидор',
@@ -197,12 +211,14 @@ export const _ingredients = [
   {
     name: 'Огурцы',
     price: 100,
+    isVegetarian: true,
     imageUrl:
         '/assets/images/ingredients/маринованные огурцы.png',
   },
   {
     name: 'Шампиньоны',
     price: 59,
+    isVegetarian: true,
     imageUrl: '/assets/images/ingredients/шампиньоны.png',
   },
 
@@ -225,7 +241,7 @@ export const products = [
     categoryId: 2,
   },
   {
-    name: 'Дэнвич ветчина и сыр',
+    name: 'Сэндвич ветчина и сыр',
     imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.webp',
     categoryId: 3,
   },
@@ -235,38 +251,38 @@ export const products = [
     categoryId: 3,
   },
   {
-    name: 'Картофель из печи с соусом 🌱',
+    name: 'Картофель из печи с соусом',
     imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EED646A9CD324C962C6BEA78124F19.webp',
     categoryId: 3,
   },
   {
-    name: 'Додстер',
+    name: 'Ролл',
     imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796F96D11392A2F6DD73599921B9.webp',
     categoryId: 3,
   },
   {
-    name: 'Острый Додстер 🌶️🌶️',
+    name: 'Острый Ролл 🌶️🌶️',
     imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796FD3B594068F7A752DF8161D04.webp',
     categoryId: 3,
   },
   {
     name: 'Банановый молочный коктейль',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EEE20B8772A72A9B60CFB20012C185.webp',
+    imageUrl: 'assets/images/products/milkshake3.png',
     categoryId: 4,
   },
-  {
-    name: 'Карамельное яблоко молочный коктейль',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE79702E2A22E693D96133906FB1B8.webp',
-    categoryId: 4,
-  },
+  // {
+  //   name: 'Карамельное яблоко молочный коктейль',
+  //   imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE79702E2A22E693D96133906FB1B8.webp',
+  //   categoryId: 4,
+  // },
   {
     name: 'Молочный коктейль с печеньем Орео',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796FA1F50F8F8111A399E4C1A1E3.webp',
+    imageUrl: 'assets/images/products/milkshake2.png',
     categoryId: 4,
   },
   {
-    name: 'Классический молочный коктейль 👶',
-    imageUrl: 'https://media.dodostatic.net/image/r:292x292/11EE796F93FB126693F96CB1D3E403FB.webp',
+    name: 'Классический молочный коктейль',
+    imageUrl: 'assets/images/products/milkshake1.png',
     categoryId: 4,
   },
   {

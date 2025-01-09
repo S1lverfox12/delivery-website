@@ -56,50 +56,60 @@ async function up() {
     data: products,
   });
 
+  const getIngredientConnections = (ids: number[]) => {
+    return ids.map(id => ({ id }));
+  };
+
+  const pizza1Ingredients = [1, 4, 5, 6, 12, 13, 2, 15, 7, 16, 3]
+  const pizza2Ingredients = [1, 4, 5, 6, 12, 13, 2, 15, 7, 10, 11, 9, 8]
+  const pizza3Ingredients = [1, 4, 5, 6, 12, 13, 2, 15, 7, 14, 3]
+
+
+  console.log(_ingredients);
   const pizza1 = await prisma.product.create({
     data: {
-      name: 'Пепперони фреш',
+      name: 'Бургер с грибами',
       imageUrl:
-        'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+        '/assets/images/products/burger1.png',
       categoryId: 1,
       ingredients: {
-        connect: _ingredients.slice(0, 5),
+        connect: getIngredientConnections(pizza1Ingredients),
       },
     },
   });
 
   const pizza2 = await prisma.product.create({
     data: {
-      name: 'Сырная',
+      name: 'Мясной бургер',
       imageUrl:
-        'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+        '/assets/images/products/burger2.png',
       categoryId: 1,
       ingredients: {
-        connect: _ingredients.slice(5, 10),
+        connect: getIngredientConnections(pizza2Ingredients),
       },
     },
   });
 
   const pizza3 = await prisma.product.create({
     data: {
-      name: 'Чоризо фреш',
+      name: 'Куриный бургер',
       imageUrl:
-        'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
+        '/assets/images/products/burger3.png',
       categoryId: 1,
       ingredients: {
-        connect: _ingredients.slice(10, 40),
+        connect: getIngredientConnections(pizza3Ingredients),
       },
     },
   });
 
   await prisma.productItem.createMany({
     data: [
-      // Пицца "Пепперони фреш"
+      // "Бургер с грибами"
       generateProductItem({ productId: pizza1.id, pizzaType: 2, size: 1 }),
       generateProductItem({ productId: pizza1.id, pizzaType: 1, size: 2 }),
       generateProductItem({ productId: pizza1.id, pizzaType: 1, size: 3 }),
 
-      // Пицца "Сырная"
+      // "Мясной бургер"
       generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 1 }),
       generateProductItem({ productId: pizza2.id, pizzaType: 1, size: 2 }),
       generateProductItem({ productId: pizza2.id, pizzaType: 1, size: 3 }),
@@ -107,7 +117,7 @@ async function up() {
       // generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 2 }),
       // generateProductItem({ productId: pizza2.id, pizzaType: 2, size: 3 }),
 
-      // Пицца "Чоризо фреш"
+      // "Куриный бургер"
       generateProductItem({ productId: pizza3.id, pizzaType: 2, size: 1 }),
       generateProductItem({ productId: pizza3.id, pizzaType: 1, size: 2 }),
       generateProductItem({ productId: pizza3.id, pizzaType: 1, size: 3 }),
@@ -159,64 +169,64 @@ async function up() {
     },
   });
 
-  await prisma.story.createMany({
-    data: [
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737',
-      },
-      {
-        previewImageUrl:
-          'https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284',
-      },
-    ],
-  });
-
-  await prisma.storyItem.createMany({
-    data: [
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
-      },
-    ],
-  });
+  // await prisma.story.createMany({
+  //   data: [
+  //     {
+  //       previewImageUrl:
+  //         'https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496',
+  //     },
+  //     {
+  //       previewImageUrl:
+  //         'https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640',
+  //     },
+  //     {
+  //       previewImageUrl:
+  //         'https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020',
+  //     },
+  //     {
+  //       previewImageUrl:
+  //         'https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958',
+  //     },
+  //     {
+  //       previewImageUrl:
+  //         'https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737',
+  //     },
+  //     {
+  //       previewImageUrl:
+  //         'https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284',
+  //     },
+  //   ],
+  // });
+  //
+  // await prisma.storyItem.createMany({
+  //   data: [
+  //     {
+  //       storyId: 1,
+  //       sourceUrl:
+  //         'https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE',
+  //     },
+  //     {
+  //       storyId: 1,
+  //       sourceUrl:
+  //         'https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE',
+  //     },
+  //     {
+  //       storyId: 1,
+  //       sourceUrl:
+  //         'https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE',
+  //     },
+  //     {
+  //       storyId: 1,
+  //       sourceUrl:
+  //         'https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE',
+  //     },
+  //     {
+  //       storyId: 1,
+  //       sourceUrl:
+  //         'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
+  //     },
+  //   ],
+  // });
 }
 
 async function down() {

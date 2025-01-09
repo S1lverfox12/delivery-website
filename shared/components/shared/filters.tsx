@@ -31,7 +31,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
 
       {/* Верхние чекбоксы */}
       <CheckboxFiltersGroup
-        title="Тип теста"
+        title="Тип бургера"
         name="pizzaTypes"
         className="mb-5"
         onClickCheckbox={filters.setPizzaTypes}
