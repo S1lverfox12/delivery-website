@@ -81,12 +81,6 @@ export const ChoosePizzaForm: React.FC<Props> = ({
 
         <div className="flex flex-col gap-4 mt-5">
           <GroupVariants
-            items={availableSizes}
-            value={String(size)}
-            onClick={(value) => setSize(Number(value) as PizzaSize)}
-          />
-
-          <GroupVariants
             items={pizzaTypes}
             value={String(type)}
             onClick={(value) => setType(Number(value) as PizzaType)}
