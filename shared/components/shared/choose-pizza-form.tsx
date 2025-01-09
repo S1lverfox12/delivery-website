@@ -35,6 +35,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
   onSubmit,
   className,
 }) => {
+  const allIngredientIds = ingredients.map((ingredient) => ingredient.id);
   const {
     size,
     type,
@@ -44,18 +45,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
     setSize,
     setType,
     addIngredient,
-  } = usePizzaOptions(items);
-
-  const { totalPrice, textDetaills } = getPizzaDetails(
-    type,
-    size,
-    items,
-    ingredients,
-    selectedIngredients,
-  );
-
-
-  // Фильтруем ингредиенты в зависимости от типа пиццы
+  } = usePizzaOptions(items, allIngredientIds);
   const filteredIngredients = ingredients.filter((ingredient) => {
     if (type === 2) { // Вегетарианская пицца
       return ingredient.isVegetarian; // Предположим, что у ингредиента есть свойство isVegetarian
@@ -63,10 +53,34 @@ export const ChoosePizzaForm: React.FC<Props> = ({
     return true; // Для обычной пиццы показываем все ингредиенты
   });
 
+  const { totalPrice, textDetaills } = getPizzaDetails(
+    type,
+    size,
+    items,
+    filteredIngredients,
+    selectedIngredients,
+  );
+
+
+  // Фильтруем ингредиенты в зависимости от типа пиццы
+  // const filteredIngredients = ingredients.filter((ingredient) => {
+  //   if (type === 2) { // Вегетарианская пицца
+  //     return ingredient.isVegetarian; // Предположим, что у ингредиента есть свойство isVegetarian
+  //   }
+  //   return true; // Для обычной пиццы показываем все ингредиенты
+  // });
+
 
   const handleClickAdd = () => {
     if (currentItemId) {
-      onSubmit(currentItemId, Array.from(selectedIngredients));
+      const selectedIngredientIds = Array.from(selectedIngredients);
+      const filteredIngredientIds = filteredIngredients.map(ingredient => ingredient.id);
+
+      // Find the intersection of selected and filtered ingredient IDs
+      const intersection = selectedIngredientIds.filter(id => filteredIngredientIds.includes(id));
+
+      // Submit the intersection of ingredient IDs
+      onSubmit(currentItemId, intersection);
     }
   };
 

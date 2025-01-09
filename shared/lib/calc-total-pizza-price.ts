@@ -25,6 +25,7 @@ export const calcTotalPizzaPrice = (
   const totalIngredientsPrice = ingredients
     .filter((ingredient) => selectedIngredients.has(ingredient.id))
     .reduce((acc, ingredient) => acc + ingredient.price, 0);
-
+  console.log(pizzaPrice);
+  console.log(totalIngredientsPrice);
   return pizzaPrice + totalIngredientsPrice;
 };

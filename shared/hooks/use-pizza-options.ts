@@ -16,10 +16,10 @@ interface ReturnProps {
   addIngredient: (id: number) => void;
 }
 
-export const usePizzaOptions = (items: ProductItem[]): ReturnProps => {
+export const usePizzaOptions = (items: ProductItem[], initialSelectedIngredients: number[] = []): ReturnProps => {
   const [size, setSize] = React.useState<PizzaSize>(1);
   const [type, setType] = React.useState<PizzaType>(1);
-  const [selectedIngredients, { toggle: addIngredient }] = useSet(new Set<number>([]));
+  const [selectedIngredients, { toggle: addIngredient }] = useSet(new Set<number>(initialSelectedIngredients));
 
   const availableSizes = getAvailablePizzaSizes(type, items);
 

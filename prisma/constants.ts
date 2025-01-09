@@ -111,117 +111,101 @@ export const _ingredients = [
   //   '/assets/images/ingredients/сыр.png',
   // },
   {
-    name: 'Булка',
-    price: 10,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/булка.png',
+    "name": "Булка",
+    "price": 15,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/булка.png"
   },
   {
-    name: 'Салат Айсберг',
-    price: 125,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/salat-iceberg.webp',
+    "name": "Салат Айсберг",
+    "price": 130,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/salat-iceberg.webp"
   },
   {
-    name: 'Острый перец халапеньо',
-    price: 200,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/острый перец халапеньо.png',
+    "name": "Острый перец халапеньо",
+    "price": 205,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/острый перец халапеньо.png"
   },
   {
-    name: 'Котлета из говядины',
-    price: 100,
-    isVegetarian: false,
-    imageUrl:
-        '/assets/images/ingredients/Котлета из говядины.png',
+    "name": "Котлета из говядины",
+    "price": 105,
+    "isVegetarian": false,
+    "imageUrl": "/assets/images/ingredients/Котлета из говядины.png"
   },
   {
-    name: 'Овощная котлета',
-    price: 100,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/овощная котлета.png',
+    "name": "Овощная котлета",
+    "price": 110,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/овощная котлета.png"
   },
   {
-    name: 'Куриная котлета',
-    price: 100,
-    isVegetarian: false,
-    imageUrl:
-        '/assets/images/ingredients/Куриная котлета.png',
+    "name": "Куриная котлета",
+    "price": 115,
+    "isVegetarian": false,
+    "imageUrl": "/assets/images/ingredients/Куриная котлета.png"
   },
   {
-    name: 'Помидор',
-    price: 100,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/помидор.png',
+    "name": "Помидор",
+    "price": 120,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/помидор.png"
   },
   {
-    name: 'Хрустящий лук',
-    price: 100,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/Хрустящий лук.webp',
+    "name": "Хрустящий лук",
+    "price": 125,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/Хрустящий лук.webp"
   },
   {
-    name: 'Двойной Чеддер',
-    price: 100,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/двойной чеддер.webp',
+    "name": "Двойной Чеддер",
+    "price": 135,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/двойной чеддер.webp"
   },
   {
-    name: 'Бекон',
-    price: 100,
-    isVegetarian: false,
-    imageUrl:
-        '/assets/images/ingredients/бекон.webp',
+    "name": "Бекон",
+    "price": 140,
+    "isVegetarian": false,
+    "imageUrl": "/assets/images/ingredients/бекон.webp"
   },
   {
-    name: 'Ветчина',
-    price: 100,
-    isVegetarian: false,
-    imageUrl:
-        '/assets/images/ingredients/ветчина.png',
+    "name": "Ветчина",
+    "price": 145,
+    "isVegetarian": false,
+    "imageUrl": "/assets/images/ingredients/ветчина.png"
   },
   {
-    name: 'Горчица',
-    price: 100,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/горчица.png',
+    "name": "Горчица",
+    "price": 150,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/горчица.png"
   },
   {
-    name: 'Кетчуп',
-    price: 100,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/кетчуп.png',
+    "name": "Кетчуп",
+    "price": 155,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/кетчуп.png"
   },
   {
-    name: 'Куриные нагетсы',
-    price: 100,
-    isVegetarian: false,
-    imageUrl:
-        '/assets/images/ingredients/куриные нагетсы.png',
+    "name": "Куриные нагетсы",
+    "price": 160,
+    "isVegetarian": false,
+    "imageUrl": "/assets/images/ingredients/куриные нагетсы.png"
   },
   {
-    name: 'Огурцы',
-    price: 100,
-    isVegetarian: true,
-    imageUrl:
-        '/assets/images/ingredients/маринованные огурцы.png',
+    "name": "Огурцы",
+    "price": 165,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/маринованные огурцы.png"
   },
   {
-    name: 'Шампиньоны',
-    price: 59,
-    isVegetarian: true,
-    imageUrl: '/assets/images/ingredients/шампиньоны.png',
+    "name": "Шампиньоны",
+    "price": 170,
+    "isVegetarian": true,
+    "imageUrl": "/assets/images/ingredients/шампиньоны.png"
   },
-
 ].map((obj, index) => ({ id: index + 1, ...obj }));
 
 export const products = [

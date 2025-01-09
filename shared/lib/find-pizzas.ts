@@ -11,7 +11,7 @@ export interface GetSearchParams {
 }
 
 const DEFAULT_MIN_PRICE = 0;
-const DEFAULT_MAX_PRICE = 1000;
+const DEFAULT_MAX_PRICE = 5000;
 
 export const findPizzas = async (params: GetSearchParams) => {
   const sizes = params.sizes?.split(',').map(Number);

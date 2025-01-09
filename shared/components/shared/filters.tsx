@@ -51,15 +51,15 @@ export const Filters: React.FC<Props> = ({ className }) => {
             type="number"
             placeholder="0"
             min={0}
-            max={1000}
+            max={5000}
             value={String(filters.prices.priceFrom)}
             onChange={(e) => filters.setPrices('priceFrom', Number(e.target.value))}
           />
           <Input
             type="number"
             min={100}
-            max={1000}
-            placeholder="1000"
+            max={5000}
+            placeholder="5000"
             value={String(filters.prices.priceTo)}
             onChange={(e) => filters.setPrices('priceTo', Number(e.target.value))}
           />
@@ -67,9 +67,9 @@ export const Filters: React.FC<Props> = ({ className }) => {
 
         <RangeSlider
           min={0}
-          max={1000}
+          max={5000}
           step={10}
-          value={[filters.prices.priceFrom || 0, filters.prices.priceTo || 1000]}
+          value={[filters.prices.priceFrom || 0, filters.prices.priceTo || 5000]}
           onValueChange={updatePrices}
         />
       </div>
