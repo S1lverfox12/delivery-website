@@ -267,7 +267,7 @@ export const products = [
   },
   {
     name: 'Банановый молочный коктейль',
-    imageUrl: 'assets/images/products/milkshake3.png',
+    imageUrl: '/assets/images/products/milkshake3.png',
     categoryId: 4,
   },
   // {
@@ -277,12 +277,12 @@ export const products = [
   // },
   {
     name: 'Молочный коктейль с печеньем Орео',
-    imageUrl: 'assets/images/products/milkshake2.png',
+    imageUrl: '/assets/images/products/milkshake2.png',
     categoryId: 4,
   },
   {
     name: 'Классический молочный коктейль',
-    imageUrl: 'assets/images/products/milkshake1.png',
+    imageUrl: '/assets/images/products/milkshake1.png',
     categoryId: 4,
   },
   {
