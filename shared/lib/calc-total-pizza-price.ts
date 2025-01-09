@@ -27,5 +27,5 @@ export const calcTotalPizzaPrice = (
     .reduce((acc, ingredient) => acc + ingredient.price, 0);
   console.log(pizzaPrice);
   console.log(totalIngredientsPrice);
-  return pizzaPrice + totalIngredientsPrice;
+  return totalIngredientsPrice;
 };
